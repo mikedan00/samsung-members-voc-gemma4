@@ -1,9 +1,8 @@
-streamlit==1.41.1
-requests==2.32.3
-beautifulsoup4==4.12.3
-lxml==5.3.0
-pandas==2.2.3
-scikit-learn==1.6.1
-joblib==1.4.2
-python-dotenv==1.0.1
+streamlit>=1.41
+requests>=2.32
+beautifulsoup4>=4.12
+pandas>=2.2
+scikit-learn>=1.5
+joblib>=1.4
+python-dotenv>=1.0
 huggingface_hub>=0.34.0

@@ -107,3 +107,17 @@ response = client.chat.completions.create(
 ```
 
 `google/gemma-4-26B-A4B-it:deepinfra`는 앱 입력 편의를 위한 표기이며, 실제 API 호출 시에는 모델과 provider를 분리해서 전달합니다.
+
+
+## Streamlit Cloud 설치 오류 대응
+
+배포 시 `Error installing requirements`가 나오면 새 앱 생성 또는 재배포 화면의 Advanced settings에서 Python version을 3.11 또는 3.12로 직접 선택하세요. Community Cloud에서는 Python 버전을 UI에서 선택하는 방식이 가장 확실합니다.
+
+의존성 충돌을 줄이기 위해 `lxml`을 제거하고 BeautifulSoup 기본 `html.parser`를 사용합니다.
+
+권장 배포 설정:
+
+- Main file path: `app.py`
+- Python version: `3.11` 또는 `3.12`
+- Secrets: `HF_TOKEN`, `HF_MODEL`, `HF_PROVIDER` 입력
+

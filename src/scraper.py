@@ -89,7 +89,7 @@ def fetch_html(url: str, session: Optional[requests.Session] = None, timeout: in
 
 
 def extract_post_links(search_html: str, max_links: int = 30) -> list[str]:
-    soup = BeautifulSoup(search_html, "lxml")
+    soup = BeautifulSoup(search_html, "html.parser")
     links: list[str] = []
     seen: set[str] = set()
 
@@ -333,7 +333,7 @@ def extract_replies(soup: BeautifulSoup, post_id: str, post_url: str, main_conte
 
 
 def parse_post(url: str, html: str, keyword: str = "") -> tuple[Post, list[Reply]]:
-    soup = BeautifulSoup(html, "lxml")
+    soup = BeautifulSoup(html, "html.parser")
     article = extract_jsonld_article(soup)
     post_id = post_id_from_url(url)
     content = extract_content(soup, article)

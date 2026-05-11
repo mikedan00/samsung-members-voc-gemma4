@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.vscode/
+.DS_Store
+data/*.db
+exports/
+models/
